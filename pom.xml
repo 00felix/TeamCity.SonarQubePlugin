@@ -18,6 +18,8 @@
         <revision>${teamcity.version}-${build.number}</revision>
         <build.number>SNAPSHOT</build.number>
         <teamcity.version>2025.03</teamcity.version>
+        <local.repo.path>${TC_LOCAL_REPO}</local.repo.path>
+        <TC_LOCAL_REPO>local-repo</TC_LOCAL_REPO>
         <sonar.plugin.vendor>${project.organization.name}</sonar.plugin.vendor>
         <sonar.plugin.vendorUrl>${project.organization.url}</sonar.plugin.vendorUrl>
         <sonar.plugin.version>${project.version}</sonar.plugin.version>
@@ -130,6 +132,10 @@
     </dependencyManagement>
 
     <repositories>
+        <repository>
+            <id>local-teamcity-artifacts</id>
+            <url>file://${local.repo.path}</url>
+        </repository>
         <repository>
             <id>JetBrains</id>
             <url>https://download.jetbrains.com/teamcity-repository</url>
